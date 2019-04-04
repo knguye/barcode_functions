@@ -1,0 +1,14 @@
+<launch>
+    <param name="cv_camera/device_id" value="0"/>
+    <param name="/usb_cam/video_device" value="1"/>
+    <param name="/usb_cam/pixel_format" value="yuyv"/>
+    <param name="/excel_writer/user_name" value="knguye"/>
+    <node name="barcode_reader_node" pkg="zbar_ros" type="barcode_reader_node"/>
+    <node name="cv_camera" pkg="cv_camera" type="cv_camera_node">
+        <remap from="/cv_camera/image_raw" to="/image"/>
+    </node>
+    <!--<node name="usb_cam" pkg="usb_cam" type="usb_cam_node"/>-->
+    <node name="alert_system" pkg="barcode_functions" type="alert_system.py" output="screen"/>
+    <node name="barcode_parser" pkg="barcode_functions" type="barcode_parser.py"/>
+    <node name="excel_writer" pkg="barcode_functions" type="excel_writer.py" output="screen"/>
+</launch>

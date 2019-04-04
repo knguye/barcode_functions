@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="barcode_functions" type="barcode_parser" name="barcode_parser" args="">
+    </node>
+</launch>
