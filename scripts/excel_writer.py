@@ -8,8 +8,8 @@ from custom_msgs.msg import IntList
 # Function: To take data from the barcode parser and write the data on the xls file
 wb = openpyxl.Workbook()
 log_sheet = wb.active # Set log_sheet to active sheet for writing 
-filename = "log"
-username = "knguye"
+filename = "log" # MODIFY this to change the name of the log file.
+username = "knguye" # MODIFY this to the current username to enable operation
 
 filepath = "/home/{}".format(username) + "/catkin_ws/src/barcode_functions/logs/{}.xlsx".format(filename) #replace knguye with user
 # openpyxl
